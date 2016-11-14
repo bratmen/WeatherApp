@@ -11,5 +11,5 @@ import retrofit2.http.Query;
 
 public interface Weather {
     @GET("api/get")
-    Call<List<PostModel>> getData(@Query("name") String resourceName, int count);
+    Call<List<PostModel>> getData(@Path("name") String resourceName, int count);
 }

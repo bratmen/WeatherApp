@@ -8,7 +8,7 @@ import com.android.wheatherapp.web.Weather;
 
 
 
-public class BaseApplication extends MainActivity{
+public class BaseApplication extends Application{
 
     private final String TAG = this.getClass().getSimpleName();
 
@@ -21,7 +21,7 @@ public class BaseApplication extends MainActivity{
         super.onSaveInstanceState(retrofit);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("api.openweathermap.org/data/2.5/weather?id=2172797")
+                .baseUrl("api.openweathermap.org/data/2.5/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         weather = retrofit.create(Weather.class);

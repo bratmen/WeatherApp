@@ -3,10 +3,10 @@
     <string-array name="city_list">
         <item>London</item>
         <item>Barcelona</item>
-        <item>Milan</item>
-        <item>Rim</item>
-        <item>Krakov</item>
-        <item>Lerida</item>
+        <item>Milano</item>
+        <item>Roma</item>
+        <item>Cracow</item>
+        <item>Lleida</item>
         <item>Madrid</item>
         <item>Valencia</item>
         <item>Paris</item>
