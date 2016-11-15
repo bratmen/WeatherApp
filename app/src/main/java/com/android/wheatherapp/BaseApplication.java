@@ -1,28 +1,29 @@
 package com.android.wheatherapp;
 
-import android.app.Application;
+import android.app.ListActivity;
+import android.os.Bundle;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import com.android.wheatherapp.web.Weather;
-import com.android.wheatherapp.Constans;
+
+import static com.android.wheatherapp.Constans.getConstApi;
 
 
-public class BaseApplication extends Application {
-
-    private final String TAG = this.getClass().getSimpleName();
+public class BaseApplication extends ListActivity {
 
     private static Weather weather;
     private Retrofit retrofit;
-    public String cityUrl;
+    public String cityUrl = new String(getConstApi());
 
     @Override
 
-    public void onCreate() {
-        super.onSaveInstanceState(retrofit);
+    protected void onCreate(Bundle onSaveInstanceState) {
+        super.onCreate(onSaveInstanceState);
+        setContentView(R.layout.post_item);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl(cityUrl.getConstApi())
+                .baseUrl(cityUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         weather = retrofit.create(Weather.class);

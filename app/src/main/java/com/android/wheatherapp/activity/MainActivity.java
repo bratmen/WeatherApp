@@ -7,8 +7,6 @@ import android.widget.Toast;
 
 import com.android.wheatherapp.R;
 
-import retrofit2.Retrofit;
-
 public abstract class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +18,5 @@ public abstract class MainActivity extends Activity {
         Toast.makeText(getApplicationContext(), selected, Toast.LENGTH_SHORT).show();
 
 
-    }
-
-
-    public void onSaveInstanceState(Retrofit retrofit) {
     }
 }
