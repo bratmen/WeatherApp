@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.wheatherapp.R;
+import com.android.wheatherapp.entity.PostModel;
 
 import java.util.List;
 

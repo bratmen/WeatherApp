@@ -1,19 +1,20 @@
 package com.android.wheatherapp;
 
-import com.android.wheatherapp.Activity.MainActivity;
+import android.app.Application;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import com.android.wheatherapp.web.Weather;
+import com.android.wheatherapp.Constans;
 
 
-
-public class BaseApplication extends Application{
+public class BaseApplication extends Application {
 
     private final String TAG = this.getClass().getSimpleName();
 
     private static Weather weather;
     private Retrofit retrofit;
+    public String cityUrl;
 
     @Override
 
@@ -21,14 +22,12 @@ public class BaseApplication extends Application{
         super.onSaveInstanceState(retrofit);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("api.openweathermap.org/data/2.5/")
+                .baseUrl(cityUrl.getConstApi())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         weather = retrofit.create(Weather.class);
     }
 
-    public static Weather getApi(){
-        return weather;
-    }
+
 
 }

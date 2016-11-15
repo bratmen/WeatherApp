@@ -1,4 +1,4 @@
-package com.android.wheatherapp.Activity;
+package com.android.wheatherapp.activity;
 
 import android.app.Activity;
 import android.os.Bundle;

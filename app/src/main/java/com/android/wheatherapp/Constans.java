@@ -1,8 +1,8 @@
 package com.android.wheatherapp;
 
-private static final String constApi = "api.openweathermap.org/data/2.5/";
-
 public class Constans {
+
+    private static String ConstApi = "api.openweathermap.org/data/2.5/weather?id=";
 
     public int London_id = 2643743;
     public int Barcelona_id = 3128759;
@@ -15,4 +15,11 @@ public class Constans {
     public int Paris_id = 2988507;
     public int Berlin_id = 2950159;
 
+    public void setConstApi(String ConstApi) {
+        this.ConstApi = ConstApi;
+    }
+
+    public static String getConstApi() {
+        return ConstApi;
+    }
 }

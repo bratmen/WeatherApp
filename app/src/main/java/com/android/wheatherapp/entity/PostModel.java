@@ -1,4 +1,4 @@
-package com.android.wheatherapp.Entity;
+package com.android.wheatherapp.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
