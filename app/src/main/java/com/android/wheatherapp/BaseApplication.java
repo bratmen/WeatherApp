@@ -1,20 +1,21 @@
 package com.android.wheatherapp;
 
-import android.app.ListActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import com.android.wheatherapp.web.Weather;
 
-import static com.android.wheatherapp.Constans.getConstApi;
+import static com.android.wheatherapp.Constans.*;
 
 
-public class BaseApplication extends ListActivity {
+public class BaseApplication extends Activity {
 
     private static Weather weather;
     private Retrofit retrofit;
     public String cityUrl = new String(getConstApi());
+    public String city_Id = new String(getLondonId());
 
     @Override
 
