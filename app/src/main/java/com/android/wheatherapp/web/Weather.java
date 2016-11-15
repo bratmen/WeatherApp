@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 
 public interface Weather {
-    @GET("api/get")
-    Call<List<PostModel>> getData(@Query("name") String resourceName, @Path("id") int cityId);
+    @GET("https://api.openweathermap.org/data/2.5/{id}")
+    Call<List<PostModel>> getData(@Path("id") String cityId);
 
 }
