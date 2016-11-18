@@ -2,24 +2,27 @@ package com.android.wheatherapp.fragments;
 
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.android.wheatherapp.R;
+import com.android.wheatherapp.adapter.PostAdapter;
 
 public class WeatherFragment extends Fragment{
-    public WeatherFragment(){
-        // Required empty public constructor
-    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public RecyclerView onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle saveInstanceState){
-        View view = inflater.inflate(R.layout.weatherfragment, container, false);
-        RecyclerView weatherlist = (RecyclerView) view.findViewById(R.id.posts_recycle_view);
-        return view;
+        Context context = getActivity().getApplicationContext();
+        RecyclerView recyclerView = new RecyclerView(context);
+        View weatherlist = recyclerView.findViewById(R.id.recycle_view_fragment);
+        recyclerView.addView(weatherlist);
+
+        return recyclerView;
     }
 }
