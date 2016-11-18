@@ -1,7 +1,11 @@
 package com.android.wheatherapp;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -18,7 +22,7 @@ import java.util.List;
 import static com.android.wheatherapp.Constans.*;
 
 
-public class BaseApplication extends Activity {
+public class BaseApplication extends Fragment {
 
     private static Weather weather;
     private Retrofit retrofit;
@@ -27,9 +31,8 @@ public class BaseApplication extends Activity {
 
     @Override
 
-    protected void onCreate(Bundle onSaveInstanceState) {
-        super.onCreate(onSaveInstanceState);
-        setContentView(R.layout.post_item);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle onSaveInstanceState) {
+        View view = inflater.inflate(R.layout.activity_main, container, false);
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(cityUrl)
@@ -41,7 +44,7 @@ public class BaseApplication extends Activity {
             response.enqueue(new Callback<List<PostModel>>() {
                 @Override
                 public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
-                    Toast.makeText(getApplicationContext(), "it is ok", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "it is ok", Toast.LENGTH_LONG).show();
                 }
 
                 @Override
@@ -49,6 +52,7 @@ public class BaseApplication extends Activity {
 
                 }
             });
+        return view;
     }
 
 
