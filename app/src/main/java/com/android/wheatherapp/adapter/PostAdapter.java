@@ -35,12 +35,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        RecyclerView city;
-        RecyclerView weather;
-        RecyclerView main;
-        RecyclerView wind;
-        RecyclerView rain;
-        RecyclerView clouds;
 
         public ViewHolder(View itemView) {
             super(itemView);

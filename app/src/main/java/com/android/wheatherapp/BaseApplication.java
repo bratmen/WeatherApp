@@ -1,6 +1,6 @@
 package com.android.wheatherapp;
 
-import android.app.Activity;
+import android.app.Application;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -44,7 +44,9 @@ public class BaseApplication extends Fragment {
             response.enqueue(new Callback<List<PostModel>>() {
                 @Override
                 public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
-                    Toast.makeText(getActivity().getApplicationContext(), "it is ok", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity()
+                            .getApplicationContext(), "response retrofit it is ok", Toast.LENGTH_LONG).show();
+
                 }
 
                 @Override
